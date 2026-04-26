@@ -1,0 +1,196 @@
+/* ==========================================================================
+   @belak/ui — Modus Theme Tokens
+   Colors: Modus Themes (WCAG AAA compliant)
+   - Light: Modus Operandi (pure white/black)
+   - Dark: Modus Vivendi (pure black/white)
+   ========================================================================== */
+
+:root {
+  /* Typography */
+  --font-display: "Avenir Next", Avenir, Montserrat, "Century Gothic", sans-serif;
+  --font-body:
+    Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+  --font-voice:
+    ui-serif, Charter, "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
+    serif;
+  --font-mono:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "Courier New", monospace;
+
+  /* Elevation — transient / overlay surfaces only (toasts, modals, popovers). */
+  --shadow-overlay: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --bg-scrim: rgba(0, 0, 0, 0.5);
+
+  /* Modus Operandi (Light) */
+  --bg-main: #ffffff;
+  --bg-dim: #f2f2f2;
+  --bg-active: #c4c4c4;
+  --bg-inactive: #e0e0e0;
+
+  --fg-main: #000000;
+  --fg-dim: #595959;
+
+  --border: #9f9f9f;
+  --border-light: #c4c4c4;
+
+  /* Accent Colors */
+  --blue: #0031a9;
+  --blue-warmer: #3548cf;
+  --blue-cooler: #0000b0;
+  --blue-faint: #003497;
+
+  --cyan: #005e8b;
+  --cyan-warmer: #3f578f;
+  --cyan-cooler: #005f5f;
+
+  --green: #006800;
+  --green-warmer: #316500;
+  --green-cooler: #00663f;
+
+  --red: #a60000;
+  --red-warmer: #972500;
+  --red-cooler: #a0132f;
+
+  --magenta: #721045;
+  --magenta-warmer: #8f0075;
+  --magenta-cooler: #531ab6;
+
+  --yellow: #6f5500;
+  --yellow-warmer: #884900;
+  --yellow-cooler: #7a4f2f;
+
+  /* Semantic Intense */
+  --red-intense: #d00000;
+  --green-intense: #008900;
+  --blue-intense: #0000ff;
+  --yellow-intense: #808000;
+
+  /* Background Highlights */
+  --bg-red-intense: #ff8f88;
+  --bg-red-subtle: #ffcfbf;
+  --bg-red-nuanced: #ffe8e8;
+  --bg-green-intense: #8adf80;
+  --bg-green-subtle: #b3fabf;
+  --bg-green-nuanced: #e0f6e0;
+  --bg-yellow-intense: #f3d000;
+  --bg-yellow-subtle: #fff576;
+  --bg-yellow-nuanced: #f8f0d0;
+  --bg-blue-intense: #bfc9ff;
+  --bg-blue-subtle: #ccdfff;
+  --bg-blue-nuanced: #ecedff;
+  --bg-magenta-intense: #dfa0f0;
+  --bg-magenta-subtle: #ffddff;
+  --bg-magenta-nuanced: #f8e6f5;
+  --bg-cyan-intense: #a4d5f9;
+  --bg-cyan-subtle: #bfefff;
+  --bg-cyan-nuanced: #e0f2fa;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+
+  /* Type Scale */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+
+  /* Layout */
+  --max-width: 72rem;
+  --radius: 4px;
+  --radius-lg: 6px;
+
+  /* Transitions */
+  --transition-fast: 100ms ease-out;
+  --transition-normal: 150ms ease-out;
+  --transition-slow: 250ms ease-out;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Layout */
+  --layout-max-width: 68rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Elevation — stronger alpha so shadow is visible against pure-black surfaces. */
+    --shadow-overlay: 0 6px 18px rgba(0, 0, 0, 0.5);
+    --bg-scrim: rgba(0, 0, 0, 0.7);
+
+    /* Modus Vivendi (Dark) */
+    --bg-main: #000000;
+    --bg-dim: #1e1e1e;
+    --bg-active: #535353;
+    --bg-inactive: #303030;
+
+    --fg-main: #ffffff;
+    --fg-dim: #989898;
+
+    --border: #646464;
+    --border-light: #535353;
+
+    /* Accent Colors */
+    --blue: #2fafff;
+    --blue-warmer: #79a8ff;
+    --blue-cooler: #00bcff;
+    --blue-faint: #92baff;
+
+    --cyan: #00d3d0;
+    --cyan-warmer: #4ae2f0;
+    --cyan-cooler: #6ae4b9;
+
+    --green: #44bc44;
+    --green-warmer: #70b900;
+    --green-cooler: #00c06f;
+
+    --red: #ff5f59;
+    --red-warmer: #ff6b55;
+    --red-cooler: #ff7f86;
+
+    --magenta: #feacd0;
+    --magenta-warmer: #f78fe7;
+    --magenta-cooler: #b6a0ff;
+
+    --yellow: #d0bc00;
+    --yellow-warmer: #fec43f;
+    --yellow-cooler: #dfaf7a;
+
+    /* Semantic Intense */
+    --red-intense: #ff6f6f;
+    --green-intense: #44df44;
+    --blue-intense: #6eb4ff;
+    --yellow-intense: #efef00;
+
+    /* Background Highlights */
+    --bg-red-intense: #9d1f1f;
+    --bg-red-subtle: #620f2a;
+    --bg-red-nuanced: #3a0c14;
+    --bg-green-intense: #2f822f;
+    --bg-green-subtle: #00422a;
+    --bg-green-nuanced: #092f1f;
+    --bg-yellow-intense: #7a6100;
+    --bg-yellow-subtle: #4a4000;
+    --bg-yellow-nuanced: #381d0f;
+    --bg-blue-intense: #1640b0;
+    --bg-blue-subtle: #242679;
+    --bg-blue-nuanced: #12154a;
+    --bg-magenta-intense: #7030af;
+    --bg-magenta-subtle: #552f5f;
+    --bg-magenta-nuanced: #2f0c3f;
+    --bg-cyan-intense: #2266ae;
+    --bg-cyan-subtle: #004065;
+    --bg-cyan-nuanced: #042837;
+  }
+}
