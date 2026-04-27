@@ -1,3 +1,14 @@
+<!--
+  @component
+  Centered placeholder for empty lists or zero-data views.
+  Pass an action via `children` to give users a next step.
+
+  ```svelte
+  <EmptyState title="No projects yet" message="Create one to get started.">
+    <Button variant="primary">New project</Button>
+  </EmptyState>
+  ```
+-->
 <script lang="ts">
   import type { Snippet } from "svelte";
 

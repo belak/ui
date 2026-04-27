@@ -1,3 +1,11 @@
+<!--
+  @component
+  Page-level heading with an optional subtitle.
+
+  ```svelte
+  <PageHeader title="Projects" subtitle="All active projects" />
+  ```
+-->
 <script lang="ts">
   let {
     title,
@@ -34,7 +42,7 @@
     line-height: 1.2;
   }
 
-.page-subtitle {
+  .page-subtitle {
     margin: var(--space-1) 0 0;
     font-size: var(--text-sm);
     color: var(--fg-dim);

@@ -1,3 +1,13 @@
+<!--
+  @component
+  Inline status text. Uses `role="alert"` for errors.
+
+  ```svelte
+  <StatusMessage variant="error" message="Invalid email address." />
+  ```
+
+  Variants: `info` `error`
+-->
 <script lang="ts">
   let {
     variant = "info",

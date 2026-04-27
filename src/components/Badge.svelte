@@ -1,3 +1,13 @@
+<!--
+  @component
+  Pill-shaped label for status or category.
+
+  ```svelte
+  <Badge variant="success">Active</Badge>
+  ```
+
+  Variants: `neutral` `info` `success` `warning` `danger`
+-->
 <script lang="ts">
   import type { Snippet } from "svelte";
 

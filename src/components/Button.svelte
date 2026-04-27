@@ -1,3 +1,14 @@
+<!--
+  @component
+  Button or link. Renders an `<a>` when `href` is provided.
+
+  ```svelte
+  <Button variant="primary" onclick={save}>Save</Button>
+  <Button href="/settings">Settings</Button>
+  ```
+
+  Variants: `default` `primary` `danger`
+-->
 <script lang="ts">
   import type { Snippet } from "svelte";
 

@@ -1,3 +1,16 @@
+<!--
+  @component
+  Full-page layout shell. Renders a flex column with optional nav and footer
+  snippets. Main content is centered and capped at `--layout-max-width`.
+
+  ```svelte
+  <Shell>
+    {#snippet nav()}<Nav />{/snippet}
+    <p>Content goes here.</p>
+    {#snippet footer()}<p>© 2026</p>{/snippet}
+  </Shell>
+  ```
+-->
 <script lang="ts">
   import type { Snippet } from "svelte";
 

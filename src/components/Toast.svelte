@@ -1,3 +1,21 @@
+<!--
+  @component
+  Singleton toast container. Place once in your app layout, then call
+  `showToast` from anywhere to display a notification.
+
+  ```svelte
+  <!-- in layout -->
+  <Toast />
+  ```
+
+  ```ts
+  import { showToast } from "@belak/ui";
+  showToast("success", "Saved.");
+  showToast("error", "Something went wrong.", 6000); // custom ms
+  ```
+
+  Types: `success` `error` `warning`
+-->
 <script lang="ts" module>
   type ToastType = "success" | "error" | "warning";
 

@@ -1,3 +1,17 @@
+<!--
+  @component
+  Bordered surface with optional header and footer slots.
+  Set `busy` to show an indeterminate progress bar along the top edge.
+  Set `fill` to make the card flex-grow to fill its container.
+
+  ```svelte
+  <Card busy={loading}>
+    {#snippet header()}Settings{/snippet}
+    <p>Body content.</p>
+    {#snippet footer()}<Button>Save</Button>{/snippet}
+  </Card>
+  ```
+-->
 <script lang="ts">
   import type { Snippet } from "svelte";
 

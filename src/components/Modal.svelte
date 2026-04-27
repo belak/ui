@@ -1,3 +1,13 @@
+<!--
+  @component
+  Dialog built on the native `<dialog>` element. Clicking the backdrop closes it.
+
+  ```svelte
+  <Modal bind:open={showModal} title="Confirm">
+    <p>Are you sure?</p>
+  </Modal>
+  ```
+-->
 <script lang="ts">
   import type { Snippet } from "svelte";
 
