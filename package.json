@@ -18,6 +18,7 @@
     "design-tokens"
   ],
   "type": "module",
+  "packageManager": "pnpm@10.33.0",
   "files": [
     "dist"
   ],
