@@ -18,6 +18,8 @@
 
   $effect(() => {
     document.documentElement.dataset.theme = theme;
-    return () => { delete document.documentElement.dataset.theme; };
+    return () => {
+      delete document.documentElement.dataset.theme;
+    };
   });
 </script>

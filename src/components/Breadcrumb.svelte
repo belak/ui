@@ -44,10 +44,7 @@
     {#if i === segments.length - 1}
       <span class="crumb current">{segment}</span>
     {:else}
-      <a
-        href="{basePath}/{segments.slice(0, i + 1).join('/')}"
-        class="crumb"
-      >
+      <a href="{basePath}/{segments.slice(0, i + 1).join('/')}" class="crumb">
         {segment}
       </a>
     {/if}

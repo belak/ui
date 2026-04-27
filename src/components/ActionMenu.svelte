@@ -14,10 +14,8 @@
   import type { Snippet } from "svelte";
   import { MoreHorizontal } from "@lucide/svelte";
 
-  let {
-    ariaLabel,
-    children,
-  }: { ariaLabel: string; children: Snippet } = $props();
+  let { ariaLabel, children }: { ariaLabel: string; children: Snippet } =
+    $props();
 
   const popoverId = `action-menu-${Math.random().toString(36).slice(2)}`;
   let trigger = $state<HTMLButtonElement | null>(null);
@@ -49,8 +47,7 @@
     if (!popover?.matches(":popover-open")) return;
     if (e.key === "ArrowDown" || e.key === "ArrowUp") {
       e.preventDefault();
-      const items =
-        popover.querySelectorAll<HTMLElement>('[role="menuitem"]');
+      const items = popover.querySelectorAll<HTMLElement>('[role="menuitem"]');
       if (items.length === 0) return;
       const current = document.activeElement as HTMLElement | null;
       const idx = Array.from(items).indexOf(current ?? items[0]);

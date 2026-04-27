@@ -25,13 +25,7 @@
   const Icon = $derived(icon);
 </script>
 
-<button
-  type="button"
-  role="menuitem"
-  class="item"
-  class:destructive
-  {onclick}
->
+<button type="button" role="menuitem" class="item" class:destructive {onclick}>
   {#if Icon}<Icon size={15} aria-hidden="true" />{/if}
   <span>{@render children()}</span>
 </button>

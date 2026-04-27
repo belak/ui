@@ -139,9 +139,18 @@
           <table class="demo-table">
             <thead><tr><th>Name</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td>Alpha</td><td><Badge variant="success">Active</Badge></td></tr>
-              <tr><td>Beta</td><td><Badge variant="warning">Pending</Badge></td></tr>
-              <tr><td>Gamma</td><td><Badge variant="danger">Error</Badge></td></tr>
+              <tr
+                ><td>Alpha</td><td><Badge variant="success">Active</Badge></td
+                ></tr
+              >
+              <tr
+                ><td>Beta</td><td><Badge variant="warning">Pending</Badge></td
+                ></tr
+              >
+              <tr
+                ><td>Gamma</td><td><Badge variant="danger">Error</Badge></td
+                ></tr
+              >
             </tbody>
           </table>
           {#snippet footer()}
@@ -159,7 +168,11 @@
         <p>Are you sure you want to do this?</p>
         <div class="modal-actions">
           <Button onclick={() => (modalOpen = false)}>Cancel</Button>
-          <Button variant="solid" color="danger" onclick={() => (modalOpen = false)}>
+          <Button
+            variant="solid"
+            color="danger"
+            onclick={() => (modalOpen = false)}
+          >
             Delete
           </Button>
         </div>
@@ -169,24 +182,39 @@
     <section>
       <h2>Toast</h2>
       <div class="row">
-        <Button onclick={() => showToast("success", "Changes saved.")}>Success</Button>
-        <Button onclick={() => showToast("error", "Something went wrong.")}>Error</Button>
-        <Button onclick={() => showToast("warning", "Disk usage is above 90%.")}>Warning</Button>
+        <Button onclick={() => showToast("success", "Changes saved.")}
+          >Success</Button
+        >
+        <Button onclick={() => showToast("error", "Something went wrong.")}
+          >Error</Button
+        >
+        <Button onclick={() => showToast("warning", "Disk usage is above 90%.")}
+          >Warning</Button
+        >
       </div>
     </section>
 
     <section>
       <h2>StatusMessage</h2>
-      <StatusMessage variant="info" message="Your session expires in 30 minutes." />
+      <StatusMessage
+        variant="info"
+        message="Your session expires in 30 minutes."
+      />
       <StatusMessage variant="success" message="Changes saved successfully." />
-      <StatusMessage variant="warning" message="This action cannot be undone." />
+      <StatusMessage
+        variant="warning"
+        message="This action cannot be undone."
+      />
       <StatusMessage variant="error" message="Failed to load data." />
     </section>
 
     <section>
       <h2>EmptyState</h2>
       <Card>
-        <EmptyState title="No results found" message="Try adjusting your filters.">
+        <EmptyState
+          title="No results found"
+          message="Try adjusting your filters."
+        >
           <Button variant="solid" color="primary">Clear filters</Button>
         </EmptyState>
       </Card>
@@ -222,7 +250,10 @@
     <section>
       <h2>ActionMenu</h2>
       <ActionMenu ariaLabel="Row actions">
-        <ActionItem icon={Pencil} onclick={() => showToast("success", "Renamed")}>
+        <ActionItem
+          icon={Pencil}
+          onclick={() => showToast("success", "Renamed")}
+        >
           Rename
         </ActionItem>
         <ActionItem
@@ -363,7 +394,7 @@
     justify-self: end;
   }
 
-  .variant-grid > :global(.grid-label:nth-child(-n+5)) {
+  .variant-grid > :global(.grid-label:nth-child(-n + 5)) {
     justify-self: center;
     align-self: end;
   }

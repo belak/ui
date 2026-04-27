@@ -34,7 +34,13 @@
     {@render children()}
   </a>
 {:else}
-  <button type="button" {onclick} class="nav-item" class:active class:menu={inDropdown}>
+  <button
+    type="button"
+    {onclick}
+    class="nav-item"
+    class:active
+    class:menu={inDropdown}
+  >
     {@render children()}
   </button>
 {/if}

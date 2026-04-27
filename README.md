@@ -19,9 +19,9 @@ Peer dependencies: `svelte ^5`, `@lucide/svelte ^1` (icons used by
 ## CSS
 
 ```js
-import "@belak/ui/css";     // tokens + reset (recommended)
-import "@belak/ui/tokens";  // design tokens only
-import "@belak/ui/reset";   // reset only
+import "@belak/ui/css"; // tokens + reset (recommended)
+import "@belak/ui/tokens"; // design tokens only
+import "@belak/ui/reset"; // reset only
 ```
 
 Tokens cover colors, spacing, type scale, shadows, and layout values.

@@ -77,7 +77,9 @@
     justify-content: space-between;
     gap: var(--space-3);
     padding: var(--space-3) var(--space-5);
-    min-height: calc(2 * var(--space-3) + 2 * var(--space-2) + var(--text-sm) * 1.3);
+    min-height: calc(
+      2 * var(--space-3) + 2 * var(--space-2) + var(--text-sm) * 1.3
+    );
     background: var(--bg-inactive);
     border-bottom: 1px solid var(--border);
     flex-wrap: wrap;
@@ -89,10 +91,18 @@
     position: relative;
   }
 
-  .pad-sm  { padding: var(--space-3); }
-  .pad-md  { padding: var(--space-5); }
-  .pad-lg  { padding: var(--space-6); }
-  .pad-none { padding: 0; }
+  .pad-sm {
+    padding: var(--space-3);
+  }
+  .pad-md {
+    padding: var(--space-5);
+  }
+  .pad-lg {
+    padding: var(--space-6);
+  }
+  .pad-none {
+    padding: 0;
+  }
 
   .card-footer {
     display: flex;

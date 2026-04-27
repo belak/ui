@@ -7,14 +7,17 @@
 
 :root {
   /* Typography */
-  --font-display: "Avenir Next", Avenir, Montserrat, "Century Gothic", sans-serif;
+  --font-display:
+    "Avenir Next", Avenir, Montserrat, "Century Gothic", sans-serif;
   --font-body:
-    Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+    Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro,
+    sans-serif;
   --font-voice:
-    ui-serif, Charter, "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia,
-    serif;
+    ui-serif, Charter, "Iowan Old Style", "Palatino Linotype", Palatino,
+    "Book Antiqua", Georgia, serif;
   --font-mono:
-    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "Courier New", monospace;
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "Courier New", monospace;
 
   /* Elevation — transient / overlay surfaces only (toasts, modals, popovers). */
   --shadow-overlay: 0 6px 18px rgba(0, 0, 0, 0.12);
