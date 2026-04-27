@@ -31,5 +31,5 @@ import { Button, Card, Modal, Toast, showToast, ... } from "@belak/ui";
 Each component is documented inline — hover over the import in your editor
 to see props and usage examples.
 
-Components: `Badge` `Button` `Card` `EmptyState` `Modal` `PageHeader`
-`Shell` `StatusMessage` `Theme` `Toast`
+Components: `Badge` `Button` `Card` `Container` `EmptyState` `Modal` `Nav`
+`NavDropdown` `NavItem` `PageHeader` `Shell` `StatusMessage` `Theme` `Toast`
