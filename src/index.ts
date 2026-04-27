@@ -5,5 +5,6 @@ export { default as EmptyState } from "./components/EmptyState.svelte";
 export { default as Modal } from "./components/Modal.svelte";
 export { default as PageHeader } from "./components/PageHeader.svelte";
 export { default as Shell } from "./components/Shell.svelte";
+export { default as Theme } from "./components/Theme.svelte";
 export { default as StatusMessage } from "./components/StatusMessage.svelte";
 export { default as Toast, show as showToast } from "./components/Toast.svelte";

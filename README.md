@@ -32,4 +32,4 @@ Each component is documented inline — hover over the import in your editor
 to see props and usage examples.
 
 Components: `Badge` `Button` `Card` `EmptyState` `Modal` `PageHeader`
-`Shell` `StatusMessage` `Toast`
+`Shell` `StatusMessage` `Theme` `Toast`

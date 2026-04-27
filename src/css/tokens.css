@@ -124,7 +124,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]),
+  :root[data-theme="auto"] {
     /* Elevation — stronger alpha so shadow is visible against pure-black surfaces. */
     --shadow-overlay: 0 6px 18px rgba(0, 0, 0, 0.5);
     --bg-scrim: rgba(0, 0, 0, 0.7);
@@ -193,4 +194,74 @@
     --bg-cyan-subtle: #004065;
     --bg-cyan-nuanced: #042837;
   }
+}
+
+[data-theme="dark"] {
+  /* Elevation — stronger alpha so shadow is visible against pure-black surfaces. */
+  --shadow-overlay: 0 6px 18px rgba(0, 0, 0, 0.5);
+  --bg-scrim: rgba(0, 0, 0, 0.7);
+
+  /* Modus Vivendi (Dark) */
+  --bg-main: #000000;
+  --bg-dim: #1e1e1e;
+  --bg-active: #535353;
+  --bg-inactive: #303030;
+
+  --fg-main: #ffffff;
+  --fg-dim: #989898;
+
+  --border: #646464;
+  --border-light: #535353;
+
+  /* Accent Colors */
+  --blue: #2fafff;
+  --blue-warmer: #79a8ff;
+  --blue-cooler: #00bcff;
+  --blue-faint: #92baff;
+
+  --cyan: #00d3d0;
+  --cyan-warmer: #4ae2f0;
+  --cyan-cooler: #6ae4b9;
+
+  --green: #44bc44;
+  --green-warmer: #70b900;
+  --green-cooler: #00c06f;
+
+  --red: #ff5f59;
+  --red-warmer: #ff6b55;
+  --red-cooler: #ff7f86;
+
+  --magenta: #feacd0;
+  --magenta-warmer: #f78fe7;
+  --magenta-cooler: #b6a0ff;
+
+  --yellow: #d0bc00;
+  --yellow-warmer: #fec43f;
+  --yellow-cooler: #dfaf7a;
+
+  /* Semantic Intense */
+  --red-intense: #ff6f6f;
+  --green-intense: #44df44;
+  --blue-intense: #6eb4ff;
+  --yellow-intense: #efef00;
+
+  /* Background Highlights */
+  --bg-red-intense: #9d1f1f;
+  --bg-red-subtle: #620f2a;
+  --bg-red-nuanced: #3a0c14;
+  --bg-green-intense: #2f822f;
+  --bg-green-subtle: #00422a;
+  --bg-green-nuanced: #092f1f;
+  --bg-yellow-intense: #7a6100;
+  --bg-yellow-subtle: #4a4000;
+  --bg-yellow-nuanced: #381d0f;
+  --bg-blue-intense: #1640b0;
+  --bg-blue-subtle: #242679;
+  --bg-blue-nuanced: #12154a;
+  --bg-magenta-intense: #7030af;
+  --bg-magenta-subtle: #552f5f;
+  --bg-magenta-nuanced: #2f0c3f;
+  --bg-cyan-intense: #2266ae;
+  --bg-cyan-subtle: #004065;
+  --bg-cyan-nuanced: #042837;
 }
