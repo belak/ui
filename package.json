@@ -2,8 +2,12 @@
   "name": "@belak/ui",
   "version": "0.0.1",
   "type": "module",
+  "svelte": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "svelte": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
     "./css": "./src/css/index.css",
     "./tokens": "./src/css/tokens.css",
     "./reset": "./src/css/reset.css"
