@@ -3,11 +3,12 @@
   Bordered surface with optional header and footer slots.
   Set `busy` to show an indeterminate progress bar along the top edge.
   Set `fill` to make the card flex-grow to fill its container.
+  Set `padding` to control body padding: `md` (default), `sm`, `lg`, `none`.
 
   ```svelte
-  <Card busy={loading}>
+  <Card busy={loading} padding="none">
     {#snippet header()}Settings{/snippet}
-    <p>Body content.</p>
+    <table>...</table>
     {#snippet footer()}<Button>Save</Button>{/snippet}
   </Card>
   ```
@@ -15,17 +16,21 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
 
+  type Padding = "none" | "sm" | "md" | "lg";
+
   let {
     header,
     footer,
     fill = false,
     busy = false,
+    padding = "md",
     children,
   }: {
     header?: Snippet;
     footer?: Snippet;
     fill?: boolean;
     busy?: boolean;
+    padding?: Padding;
     children: Snippet;
   } = $props();
 </script>
@@ -34,7 +39,7 @@
   {#if header}
     <div class="card-header">{@render header()}</div>
   {/if}
-  <div class="card-body">
+  <div class="card-body pad-{padding}">
     {#if busy}
       <div class="progress-bar" aria-hidden="true"></div>
     {/if}
@@ -78,12 +83,16 @@
     flex-wrap: wrap;
   }
 
-
   .card-body {
     display: flex;
     flex-direction: column;
     position: relative;
   }
+
+  .pad-sm  { padding: var(--space-3); }
+  .pad-md  { padding: var(--space-5); }
+  .pad-lg  { padding: var(--space-6); }
+  .pad-none { padding: 0; }
 
   .card-footer {
     display: flex;

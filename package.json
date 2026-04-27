@@ -12,10 +12,15 @@
     "./tokens": "./src/css/tokens.css",
     "./reset": "./src/css/reset.css"
   },
+  "scripts": {
+    "dev": "vite"
+  },
   "peerDependencies": {
     "svelte": "^5"
   },
   "devDependencies": {
-    "svelte": "^5"
+    "@sveltejs/vite-plugin-svelte": "^5",
+    "svelte": "^5",
+    "vite": "^6"
   }
 }
