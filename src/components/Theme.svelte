@@ -15,6 +15,9 @@
   }: {
     theme?: "light" | "dark" | "auto";
   } = $props();
-</script>
 
-<svelte:document data-theme={theme} />
+  $effect(() => {
+    document.documentElement.dataset.theme = theme;
+    return () => { delete document.documentElement.dataset.theme; };
+  });
+</script>
