@@ -10,15 +10,21 @@
     },
     "./css": "./src/css/index.css",
     "./tokens": "./src/css/tokens.css",
-    "./reset": "./src/css/reset.css"
+    "./reset": "./src/css/reset.css",
+    "./util": {
+      "svelte": "./src/util/index.ts",
+      "default": "./src/util/index.ts"
+    }
   },
   "scripts": {
     "dev": "vite"
   },
   "peerDependencies": {
+    "@lucide/svelte": "^1",
     "svelte": "^5"
   },
   "devDependencies": {
+    "@lucide/svelte": "^1.8.0",
     "@sveltejs/vite-plugin-svelte": "^5",
     "svelte": "^5",
     "vite": "^6"

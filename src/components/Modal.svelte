@@ -10,6 +10,7 @@
 -->
 <script lang="ts">
   import type { Snippet } from "svelte";
+  import { X } from "@lucide/svelte";
 
   let {
     open = $bindable(false),
@@ -59,7 +60,9 @@
     {#if title}
       <div class="header">
         <h2 id={titleId}>{title}</h2>
-        <button class="close-btn" onclick={close} aria-label="Close">×</button>
+        <button class="close-btn" onclick={close} aria-label="Close">
+          <X size={18} aria-hidden="true" />
+        </button>
       </div>
     {/if}
     <div class="body">
@@ -119,7 +122,6 @@
     border: none;
     cursor: pointer;
     color: var(--fg-dim);
-    font-size: var(--text-xl);
     line-height: 1;
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius);

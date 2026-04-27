@@ -1,27 +1,43 @@
 <script lang="ts">
   import {
+    ActionItem,
+    ActionMenu,
     Badge,
+    Breadcrumb,
     Button,
     Card,
+    ConfirmModal,
     EmptyState,
+    GridSkeleton,
     Modal,
     Nav,
     NavDropdown,
     NavItem,
     PageHeader,
+    Pagination,
     Shell,
+    Skeleton,
     StatusMessage,
+    TableSkeleton,
     Theme,
     Toast,
     showToast,
   } from "@belak/ui";
+  import { formatSize, useDelayedLoading } from "@belak/ui/util";
+  import { Pencil, Trash2 } from "@lucide/svelte";
 
   type ThemeValue = "light" | "dark" | "auto";
 
   let theme = $state<ThemeValue>("auto");
   let modalOpen = $state(false);
+  let confirmOpen = $state(false);
   let busyCard = $state(false);
   let navPath = $state("/");
+  let page = $state(1);
+  let loading = $state(false);
+  const showSpinner = useDelayedLoading(() => loading, 250);
+
+  const sizes = [0, 512, 4096, 1024 * 1024 * 2.5, 1024 * 1024 * 1024 * 3.7];
 </script>
 
 <Theme {theme} />
@@ -87,11 +103,23 @@
         <Button variant="ghost" color="danger">Ghost</Button>
         <Button variant="ghost" color="warning">Ghost</Button>
 
-        <span class="grid-label">disabled</span>
+        <span class="grid-label">outline disabled</span>
         <Button disabled>Outline</Button>
+        <Button color="primary" disabled>Outline</Button>
+        <Button color="danger" disabled>Outline</Button>
+        <Button color="warning" disabled>Outline</Button>
+
+        <span class="grid-label">solid disabled</span>
+        <Button variant="solid" disabled>Solid</Button>
         <Button variant="solid" color="primary" disabled>Solid</Button>
+        <Button variant="solid" color="danger" disabled>Solid</Button>
+        <Button variant="solid" color="warning" disabled>Solid</Button>
+
+        <span class="grid-label">ghost disabled</span>
+        <Button variant="ghost" disabled>Ghost</Button>
+        <Button variant="ghost" color="primary" disabled>Ghost</Button>
         <Button variant="ghost" color="danger" disabled>Ghost</Button>
-        <span></span>
+        <Button variant="ghost" color="warning" disabled>Ghost</Button>
       </div>
     </section>
 
@@ -163,6 +191,106 @@
         </EmptyState>
       </Card>
     </section>
+
+    <section>
+      <h2>ConfirmModal</h2>
+      <Button color="danger" onclick={() => (confirmOpen = true)}>
+        Delete thing
+      </Button>
+      <ConfirmModal
+        open={confirmOpen}
+        title="Delete thing"
+        message="This action cannot be undone."
+        confirmLabel="Delete"
+        onConfirm={() => showToast("success", "Thing deleted.")}
+        onClose={() => (confirmOpen = false)}
+      />
+    </section>
+
+    <section>
+      <h2>Breadcrumb</h2>
+      <Breadcrumb path="" basePath="/files" />
+      <Breadcrumb path="docs" basePath="/files" />
+      <Breadcrumb path="docs/2026/notes" basePath="/files" />
+    </section>
+
+    <section>
+      <h2>Pagination</h2>
+      <Pagination {page} totalPages={5} onNavigate={(p) => (page = p)} />
+    </section>
+
+    <section>
+      <h2>ActionMenu</h2>
+      <ActionMenu ariaLabel="Row actions">
+        <ActionItem icon={Pencil} onclick={() => showToast("success", "Renamed")}>
+          Rename
+        </ActionItem>
+        <ActionItem
+          icon={Trash2}
+          destructive
+          onclick={() => showToast("error", "Deleted")}
+        >
+          Delete
+        </ActionItem>
+      </ActionMenu>
+    </section>
+
+    <section>
+      <h2>Skeleton</h2>
+      <Card>
+        <div class="skel-row">
+          <Skeleton width="40%" />
+          <Skeleton width="80%" />
+          <Skeleton width="60%" />
+        </div>
+      </Card>
+    </section>
+
+    <section>
+      <h2>TableSkeleton</h2>
+      <Card padding="none">
+        <table class="demo-table">
+          <thead>
+            <tr><th>Name</th><th>Size</th><th>Modified</th></tr>
+          </thead>
+          <tbody>
+            <TableSkeleton
+              rows={4}
+              columns={[{}, { align: "right" }, { width: "30%" }]}
+            />
+          </tbody>
+        </table>
+      </Card>
+    </section>
+
+    <section>
+      <h2>GridSkeleton</h2>
+      <Card>
+        <div class="grid-skel">
+          <GridSkeleton count={6} />
+        </div>
+      </Card>
+    </section>
+
+    <section>
+      <h2>util/format</h2>
+      <ul class="kv">
+        {#each sizes as bytes}
+          <li><code>{bytes}</code> → <code>{formatSize(bytes)}</code></li>
+        {/each}
+      </ul>
+    </section>
+
+    <section>
+      <h2>util/useDelayedLoading</h2>
+      <div class="row">
+        <Button onclick={() => (loading = !loading)}>
+          {loading ? "Stop" : "Start"} load
+        </Button>
+        <span>raw: <code>{loading}</code></span>
+        <span>delayed (250ms): <code>{showSpinner()}</code></span>
+      </div>
+    </section>
   </div>
 </Shell>
 
@@ -222,7 +350,7 @@
 
   .variant-grid {
     display: grid;
-    grid-template-columns: 5rem repeat(4, auto);
+    grid-template-columns: 8rem repeat(4, auto);
     gap: var(--space-2) var(--space-3);
     align-items: center;
     justify-items: start;
@@ -264,5 +392,28 @@
     justify-content: flex-end;
     gap: var(--space-2);
     margin-top: var(--space-4);
+  }
+
+  .grid-skel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    gap: var(--space-2);
+  }
+
+  .skel-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .kv {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--fg-dim);
   }
 </style>
