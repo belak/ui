@@ -4,7 +4,6 @@
   `showToast` from anywhere to display a notification.
 
   ```svelte
-  <!-- in layout -->
   <Toast />
   ```
 
