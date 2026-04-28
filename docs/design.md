@@ -1,6 +1,6 @@
 # Design Philosophy
 
-This document is for developers building apps on `@belak/ui`. It explains *why*
+This document is for developers building apps on `@belak/ui`. It explains _why_
 the library is shaped the way it is, so the apps that consume it feel like a
 cohesive suite rather than a disjointed mess. Token names, scales, and semantic
 role tables live in `src/css/tokens.css` and the [Modus palette
@@ -23,7 +23,7 @@ color, single-pixel borders, no gradients. This is the discipline the rest of
 the library inherits. It is not a starting point to soften; it is the look.
 
 **Serif-italic voice.** A serif italic, used sparingly, is the visual signature.
-The interface is sans and quiet; the serif appears only when the app *speaks*.
+The interface is sans and quiet; the serif appears only when the app _speaks_.
 Empty states, confirmations, error pages, success toasts. The serif is the
 narrator, not a display family.
 
@@ -43,7 +43,7 @@ The tonal reference is the dry SF tradition (Douglas Adams, Terry Pratchett,
 Robert Asprin, Brandon Sanderson's Wit): observational, never trying too hard,
 comfortable with understatement, occasionally willing to have more edge.
 
-Understatement is one form: *"Uploaded."* not *"Successfully uploaded!"* It
+Understatement is one form: _"Uploaded."_ not _"Successfully uploaded!"_ It
 doesn't have to be flat, though. A well-placed absurd observation lands better
 than forced brevity. No exclamation marks, no reassurance, no
 self-congratulation. The specific copy belongs to each app; the posture is the
