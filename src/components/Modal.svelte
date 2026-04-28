@@ -79,7 +79,8 @@
     color: inherit;
     max-width: 32rem;
     width: calc(100% - var(--space-8));
-    margin: 15vh auto auto;
+    margin: 5vh auto;
+    max-height: 90vh;
   }
 
   dialog::backdrop {
@@ -87,6 +88,9 @@
   }
 
   .box {
+    display: flex;
+    flex-direction: column;
+    max-height: inherit;
     background: var(--bg-main);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -134,6 +138,9 @@
 
   .body {
     padding: var(--space-4) var(--space-5);
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
   }
 
   @media (max-width: 768px) {
