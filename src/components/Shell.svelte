@@ -49,6 +49,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: var(--space-4);
     width: 100%;
     max-width: var(--layout-max-width);
     margin: 0 auto;
