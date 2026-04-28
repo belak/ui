@@ -249,21 +249,20 @@
 
     <section>
       <h2>ActionMenu</h2>
-      <ActionMenu ariaLabel="Row actions">
-        <ActionItem
-          icon={Pencil}
-          onclick={() => showToast("success", "Renamed")}
-        >
-          Rename
-        </ActionItem>
-        <ActionItem
-          icon={Trash2}
-          destructive
-          onclick={() => showToast("error", "Deleted")}
-        >
-          Delete
-        </ActionItem>
-      </ActionMenu>
+      <div class="row">
+        <ActionMenu ariaLabel="Row actions">
+          <ActionItem icon={Pencil} onclick={() => showToast("success", "Renamed")}>Rename</ActionItem>
+          <ActionItem icon={Trash2} destructive onclick={() => showToast("error", "Deleted")}>Delete</ActionItem>
+        </ActionMenu>
+        <ActionMenu ariaLabel="Row actions" variant="outline">
+          <ActionItem icon={Pencil} onclick={() => showToast("success", "Renamed")}>Rename</ActionItem>
+          <ActionItem icon={Trash2} destructive onclick={() => showToast("error", "Deleted")}>Delete</ActionItem>
+        </ActionMenu>
+        <ActionMenu ariaLabel="Row actions" variant="solid">
+          <ActionItem icon={Pencil} onclick={() => showToast("success", "Renamed")}>Rename</ActionItem>
+          <ActionItem icon={Trash2} destructive onclick={() => showToast("error", "Deleted")}>Delete</ActionItem>
+        </ActionMenu>
+      </div>
     </section>
 
     <section>

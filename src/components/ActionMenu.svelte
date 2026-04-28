@@ -8,14 +8,29 @@
     <ActionItem onclick={rename}>Rename</ActionItem>
     <ActionItem onclick={remove} destructive>Delete</ActionItem>
   </ActionMenu>
+
+  <ActionMenu ariaLabel="Row actions" variant="outline">
+    <ActionItem onclick={rename}>Rename</ActionItem>
+  </ActionMenu>
   ```
+
+  `variant`: `ghost` (default) | `outline` | `solid`
 -->
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { MoreHorizontal } from "@lucide/svelte";
 
-  let { ariaLabel, children }: { ariaLabel: string; children: Snippet } =
-    $props();
+  type Variant = "ghost" | "outline" | "solid";
+
+  let {
+    ariaLabel,
+    variant = "ghost",
+    children,
+  }: {
+    ariaLabel: string;
+    variant?: Variant;
+    children: Snippet;
+  } = $props();
 
   const popoverId = `action-menu-${Math.random().toString(36).slice(2)}`;
   let trigger = $state<HTMLButtonElement | null>(null);
@@ -64,7 +79,7 @@
 
 <button
   type="button"
-  class="trigger"
+  class="trigger trigger-{variant}"
   aria-label={ariaLabel}
   bind:this={trigger}
   popovertarget={popoverId}
@@ -93,16 +108,39 @@
     align-items: center;
     justify-content: center;
     padding: var(--space-2);
-    color: var(--fg-dim);
-    border: none;
     border-radius: var(--radius);
-    background: transparent;
+    border: 1px solid transparent;
     cursor: pointer;
   }
 
-  .trigger:hover {
+  .trigger-ghost {
+    background: transparent;
+    color: var(--fg-dim);
+  }
+
+  .trigger-ghost:hover {
     color: var(--fg-main);
     background: var(--bg-dim);
+  }
+
+  .trigger-outline {
+    background: var(--bg-main);
+    color: var(--fg-main);
+    border-color: var(--border);
+  }
+
+  .trigger-outline:hover {
+    background: var(--bg-dim);
+  }
+
+  .trigger-solid {
+    background: var(--bg-inactive);
+    color: var(--fg-main);
+    border-color: var(--bg-inactive);
+  }
+
+  .trigger-solid:hover {
+    opacity: 0.9;
   }
 
   .popover {
